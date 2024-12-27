@@ -84,3 +84,21 @@ header{
         }
     }
 }
+
+footer{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background);
+    color: var(--fontWhite);
+
+    p{
+        font-size: 20px;
+
+        a{
+            color: var(--fontWhite);
+        }
+    }
+}
