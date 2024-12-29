@@ -21,11 +21,30 @@ header{
     width: 100%;
     height: 100px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     background-color: var(--background);
     color: var(--fontWhite);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    .buttonBox{
+        display: flex;
+        column-gap: 20px;
+
+        h2{
+            a{
+                text-decoration: none;
+                color: var(--fontWhite);
+                background-color: #4ade80;
+                padding: 10px;
+                border-radius: 10px;
+            }
+
+            #register{
+                background-color: #38bdf8;
+            }
+        }
+    }
     
     h1{
         font-weight: bolder;
@@ -33,6 +52,18 @@ header{
         a{
             text-decoration: none;
             color: var(--fontWhite);
+        }
+    }
+
+    h2{
+        font-weight: bold;
+
+        #logout{
+            text-decoration: none;
+            color: var(--fontWhite);
+            background-color: #ef4444;
+            padding: 10px;
+            border-radius: 10px;
         }
     }
 }
@@ -81,6 +112,84 @@ header{
             color: var(--fontWhite);
             font-weight: bold;
             cursor: pointer;
+        }
+    }
+}
+
+.mainPageContainer{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1{
+        color: var(--fontWhite);
+    }
+
+    form{
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+
+        input{
+            font-size: 30px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #5bb378;
+            color: var(--fontWhite);
+        }
+
+        button{
+            margin: 15px 0;
+            font-size: 30px;
+            padding: 10px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    }
+
+    .yourFiles{
+        width: 50%;
+        min-width: 593px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        #alertText{
+            color: var(--fontWhite);
+            font-size: 25px;
+            margin-top: 50px;
+        }
+
+        .fileWrapper{
+            margin: 15px 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            background-color: var(--fontWhite);
+            padding: 15px;
+            border-radius: 10px;
+            color: #111;
+            align-items: center;
+
+            h3{
+                width: 20%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            
+            a{
+                text-decoration: none;
+                background-color: #5bb378;
+                font-size: 18px;
+                color: var(--fontWhite);
+                padding: 5px;
+                border-radius: 5px;
+            }
         }
     }
 }

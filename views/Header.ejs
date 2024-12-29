@@ -1,3 +1,12 @@
 <header>
-    <h1><a href="/">File Uploader</a></h1>
+    <% if(login) { %>
+        <h1><a href="/">File Uploader</a></h1>
+        <h2><a href="/logout" id="logout">Logout</a></h2>
+    <% } else {%>
+        <h1><a href="/">File Uploader</a></h1>
+        <div class="buttonBox">
+            <h2><a href="/login" id="login">Login</a></h2>
+            <h2><a href="/register" id="register">Register</a></h2>
+        </div>
+    <% } %>
 </header>
