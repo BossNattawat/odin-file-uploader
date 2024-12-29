@@ -21,7 +21,7 @@ router.get("/", (req, res) => {
 router.get("/login", (req, res) => {
     let login = req.session.login
     if(login){
-        res.redirect("/index")
+        res.redirect("/")
     }
     else{
         res.render("login", {login:login})
@@ -31,7 +31,7 @@ router.get("/login", (req, res) => {
 router.get("/register", (req, res) => {
     let login = req.session.login
     if(login){
-        res.redirect("/index")
+        res.redirect("/")
     }
     else{
         res.render("register", {login:login})

@@ -65,31 +65,6 @@ passport.use(new LocalStrategy(async function verify(username, password, done) {
 }));
 
 
-passport.use(new LocalStrategy(async function verify(username, password, done) {
-    try {
-      const existingUser = await User.findOne({ username });
-  
-      if (!existingUser) {
-        return done(null, false, { message: "Incorrect username or password!" });
-      }
-  
-      const hashedPassword = await new Promise((resolve, reject) => {
-        crypto.pbkdf2(password, 'staticSalt', 310000, 32, 'sha256', (err, derivedKey) => {
-          if (err) reject(err);
-          else resolve(derivedKey.toString('hex'));
-        });
-      });
-  
-      if (existingUser.password !== hashedPassword) {
-        return done(null, false, { message: "Incorrect username or password!" });
-      }
-  
-      return done(null, existingUser);
-    } catch (err) {
-      return done(err);
-    }
-}));
-
 router.get("/register", (req, res) => {
     let login = req.session.login
     if(login){
