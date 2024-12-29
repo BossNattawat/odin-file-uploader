@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <%-include("Header")%>
     <div class="LoginContainer">
-        <form action="/RegisterAnAccount" method="POST">
+        <form action="/registerNewAccount" method="POST">
             <h1>Login</h1>
-            <label for="fullname">Fullname</label>
+            <label for="fullname">Full Name</label>
             <input type="text" name="fullname" placeholder="Fullname">
             <label for="username">Username</label>
             <input type="text" name="username" placeholder="Username">
@@ -19,7 +20,7 @@
             <input type="password" name="password" placeholder="Password">
             <label for="password">Confirm Password</label>
             <input type="password" name="confirmPassword" placeholder="Password">
-            <button type="submit">Login</button>
+            <button type="submit">Register</button>
             <p>Already have an account? <a href="/login">Login!</a></p>
         </form>
     </div>

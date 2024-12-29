@@ -5,9 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File Uploader</title>
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <%-include("Header")%>
-    <h1>File Uploader</h1>
+    <div class="mainPageContainer">
+        <h1>Upload File</h1>
+        <form action="/upload/<%=userID%>" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <button type="submit">Upload</button>
+        </form>
+
+        <div class="yourFiles">
+            <h1>Your Files</h1>
+            <% if(file.length > 0) { %>
+                <% file.map((item, index) => { %>
+                    <div class="fileWrapper">
+                        <h3><%=item.originalName %></h3>
+                        <p>Uploaded on: <%=file[index].uploadDate.toLocaleDateString() %></p>
+                        <a href="/download/<%=userID%>/<%=file[index]._id%>" target="_blank">Download</a>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <p id="alertText">No files uploaded yet.</p>
+            <% } %>
+        </div>
+    </div>
+    <%-include("Footer")%>
 </body>
 </html>
